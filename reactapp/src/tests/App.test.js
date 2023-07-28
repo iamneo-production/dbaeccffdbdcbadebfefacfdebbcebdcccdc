@@ -38,16 +38,14 @@ describe('Testing App Component', () => {
         wrapper.unmount();
     });
 
-    // test('testcase5', () => {
-    //     const wrapper = mount(<App />);
-    //     wrapper.find('button').simulate('click')
-    //     wrapper.find('button').forEach(node => {
-    //         expect(node.simulate('click'));
-    //     });
-    //     wrapper.find('button').last().simulate('click');
-    //     expect(wrapper.find('button').text()).toBe('Start Quiz');
+    test('testcase5', () => {
+        const wrapper = mount(<App />);
+        wrapper.find('button').simulate('click')
+        wrapper.find('button').forEach(node => {
+            expect(node.simulate('click'));
+        });
+        wrapper.find('button').last().simulate('click');
+        expect(wrapper.find('button').text()).toBe('Start Quiz');
 
-    //     expect(wrapper.find('Banner').text()).toBe("You have answered 1 / 5  Correctly");
-
-    // })
+    })
 })

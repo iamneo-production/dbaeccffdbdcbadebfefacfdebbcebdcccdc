@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../components/UI/Button/Button";
+import Button from "../src/components/UI/Button/Button";
 import { shallow, mount } from "enzyme";
 
 describe('Testing Button Component', () => {

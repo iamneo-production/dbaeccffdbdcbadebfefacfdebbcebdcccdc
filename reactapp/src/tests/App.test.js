@@ -47,12 +47,7 @@ describe('Testing App Component', () => {
         wrapper.find('button').last().simulate('click');
         expect(wrapper.find('button').text()).toBe('Start Quiz');
 
-        expect(wrapper.find('Banner').text()).toBe("You have answered 0 / 5  Correctly" ||
-        "You have answered 1 / 5  Correctly" || 
-        "You have answered 2 / 5  Correctly" || 
-        "You have answered 3 / 5  Correctly" || 
-        "You have answered 4 / 5  Correctly" || 
-        "You have answered 5 / 5  Correctly")
+        expect(wrapper.find('Banner').text()).toBe("You have answered 1 / 5  Correctly");
 
     })
 })

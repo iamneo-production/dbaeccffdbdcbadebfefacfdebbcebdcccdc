@@ -5,44 +5,54 @@ import { shallow, mount } from "enzyme";
 
 var wrapper;
 describe('Testing App Component', () => {
-
-   // App Component renders without crashing 
-    test('FE_render_page', () => {
+    test('testcase1', () => {
         wrapper = mount(<App />);
         expect(wrapper.instance()).toBeDefined();
         wrapper.unmount();
     });
 
-    // Testing the Start Quiz button 
-
-    test('FE_start_button', () => {
+    test('testcase2', () => {
         wrapper = mount(<App />);
         expect(wrapper.find('h1').text()).toBe('Quizz App');
         expect(wrapper.find('button').instance()).toBeDefined();
         wrapper.unmount();
     });
 
-    // Checking the UI after clicking the Start Quiz button
-
-    test('FE_start_app', () => {
+    test('testcase3', () => {
         wrapper = mount(<App />);
-        wrapper.find('Button').simulate('click')
+        wrapper.find('button').simulate('click')
         wrapper.find('Button').forEach(node => {
             expect(node.text()).not.toBe('Start Quiz');
         })
         wrapper.unmount();
     });
 
-    // After finishing all the questions, checking whether the show result button shows up
-
-    test('FE_finish_test', () => {
-        wrapper = mount(<App />);
-        wrapper.find('Button').simulate('click')
-        wrapper.find('Button').forEach(node => {
+    test('testcase4', () => {
+        const wrapper = mount(<App />);
+        wrapper.find('button').simulate('click')
+        wrapper.find('button').forEach(node => {
             expect(node.simulate('click'));
         });
         
         expect(wrapper.find('Button').last().text()).toBe('Show Results');
         wrapper.unmount();
     });
+
+    test('testcase5', () => {
+        const wrapper = mount(<App />);
+        wrapper.find('button').simulate('click')
+        wrapper.find('button').forEach(node => {
+            expect(node.simulate('click'));
+        });
+        wrapper.find('button').last().simulate('click');
+        expect(wrapper.find('button').text()).toBe('Start Quiz');
+
+        expect(wrapper.find('Banner').text()).toBe("You have answered 0 / 5  Correctly" ||
+        "You have answered 1 / 5  Correctly" || 
+        "You have answered 2 / 5  Correctly" || 
+        "You have answered 3 / 5  Correctly" || 
+        "You have answered 4 / 5  Correctly" || 
+        "You have answered 5 / 5  Correctly")
+
+    })
 })

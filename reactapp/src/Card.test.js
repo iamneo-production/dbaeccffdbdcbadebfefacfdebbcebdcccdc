@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../components/UI/Card/Card";
+import Card from "../src/components/UI/Card/Card";
 import { shallow, mount } from "enzyme";
 
 var questionProp, wrapper, mockFunction;
